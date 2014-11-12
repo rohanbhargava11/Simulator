@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+
+<launch>
+  <arg name="paused" default="false"/>
+  <arg name="use_sim_time" default="true"/>
+  <arg name="gui" default="true"/>
+  <arg name="headless" default="false"/>
+  <arg name="debug" default="false"/>
+
+  <include file="$(find spiri_description)/launch/spiri_vineyard_mesh.launch">
+ 
+  </include>
+
+  <include file="$(find spiri_description)/launch/description.launch" >
+   <arg name="x" value="0.0"/>
+   <arg name="y" value="5.0"/>
+   <arg name="z" value="0.79133"/>
+   <arg name="use_ground_truth_for_tf" value="true"/>
+   <arg name="use_ground_truth_for_control" value="true" />
+  </include>
+
+</launch>

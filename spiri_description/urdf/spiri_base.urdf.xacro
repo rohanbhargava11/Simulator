@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
 
 <robot name="spiri" xmlns:xacro="http://ros.org/wiki/xacro">
+  <xacro:include filename="$(find spiri_description)/urdf/materials.urdf.xacro" />
   <xacro:property name="M_PI" value="3.1415926535897931" />
 
   <link name="base_link">
@@ -21,15 +22,15 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="package://spiri_description/meshes/spiri.STL" />
+        <mesh filename="package://spiri_description/meshes/spiri.dae" />
       </geometry>
-
+      
       <!-- This sets the color in rviz, but not gazebo -->
-      <material name="SpiriWhite">
-        <color rgba="0.8 0.8 0.9 1.0"/>
-      </material>
+      <!--material name="Blue"-->
+        <!--color rgba="0.8 0.8 0.9 1.0"/-->
+      <!--/material-->
     </visual>
-
+    
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
@@ -39,7 +40,7 @@
  </link>
 
  <gazebo reference="base_link">
-	 <material>Gazebo/White</material>
+   <!--material>Gazebo/BlueGlow</material-->
 	 <turnGravityOff>false</turnGravityOff>
  </gazebo>
 
